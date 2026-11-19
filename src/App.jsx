@@ -4,11 +4,13 @@ import Report from "./pages/Report";
 import Navbar from "./components/Navbar";
 import Complaints from "./pages/Complaints";
 import Check from "./pages/Check";
+import Footer from "./components/Footer";
 
 const App = () =>{
   return(
     <div>
     <Navbar />
+    <Footer />
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/report" element={<Report />}/>
