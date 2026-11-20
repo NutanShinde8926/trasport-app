@@ -10,13 +10,13 @@ const App = () =>{
   return(
     <div>
     <Navbar />
-    <Footer />
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/report" element={<Report />}/>
       <Route path="/complaints" element={<Complaints/>} />
       <Route path="/check" element={< Check/>} />
     </Routes>
+    <Footer />
     </div>
   )
 }

@@ -7,6 +7,6 @@ const Footer = () =>{
                 passengers and drivers both get a fair system.
             </p>
         </footer>
-    )
-}
+    );
+};
 export default Footer;
