@@ -8,6 +8,11 @@ body {
     font-family: Arial, sans-serif;
 }
 
+html{
+    overscroll-behavior: none; 
+    /* background-color: #10271e; */
+}
+
 /* #root {
     min-height: 100vh;
 }
@@ -155,14 +160,14 @@ main{
 
 /*ABOUT*/
 .about{
-    min-height: 75vh;
+    min-height: 75vh;  /* Section ki minimum height screen ki 75% hogi */
     background-color: #dbded0;
-    padding: 30px;
+    padding: 30px;  /* Content aur section ke edges ke beech space */
 }
 .about-card{
     background-color: white;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto; /*0 top-bottom margin hai aur auto left-right margin ko automatically adjust karta hai, jisse card center mein aata hai.*/
     padding: 40px;
     border-radius: 24px;
 }

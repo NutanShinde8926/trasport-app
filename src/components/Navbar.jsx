@@ -10,6 +10,8 @@ const Navbar =() =>{
     <NavLink to="/complaints">Complaints</NavLink>
     <NavLink to="/check">Check</NavLink>
     <NavLink to="/about">About</NavLink>
+    <NavLink to="/login">Login</NavLink>
+    <NavLink to="/signup">Signup</NavLink>
     <button className="theme-btn">Dark</button>
     </div>
    </nav>

@@ -3,7 +3,8 @@ const About = ()=>{
         <div className="about">
             <div className="about-card">
                 <h1>What Is This App?</h1>
-                <p>Trasport App helps passengers report problems on <b>Rikshaws and Buses</b> using the vehival numberes.
+                <p>Trasport App helps passengers report problems on <b>Rikshaws and
+                     Buses</b> using the vehival numberes.
                 </p>
 
                 <h2>Why We made It?</h2>

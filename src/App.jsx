@@ -6,6 +6,8 @@ import Complaints from "./pages/Complaints";
 import Check from "./pages/Check";
 import Footer from "./components/Footer";
 import About from "./pages/About";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const App = () =>{
   return(
@@ -17,6 +19,8 @@ const App = () =>{
       <Route path="/complaints" element={<Complaints/>} />
       <Route path="/check" element={< Check/>} />
       <Route path="/about" element={< About/>}/>
+      <Route path="/login" element={< Login />} />
+      <Route path="/signup" element={< Signup />}/>
     </Routes>
     <Footer />
     </div>
