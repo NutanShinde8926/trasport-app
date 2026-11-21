@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Complaints from "./pages/Complaints";
 import Check from "./pages/Check";
 import Footer from "./components/Footer";
+import About from "./pages/About";
 
 const App = () =>{
   return(
@@ -15,6 +16,7 @@ const App = () =>{
       <Route path="/report" element={<Report />}/>
       <Route path="/complaints" element={<Complaints/>} />
       <Route path="/check" element={< Check/>} />
+      <Route path="/about" element={< About/>}/>
     </Routes>
     <Footer />
     </div>
