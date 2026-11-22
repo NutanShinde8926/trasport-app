@@ -1,3 +1,4 @@
+// import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Report from "./pages/Report";
@@ -9,7 +10,19 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
-const App = () =>{
+const App = () => {
+  // const [complaints, setComplaints] = useState(() => {
+  //   const saved = localStorage.getItem("complaints");
+  //   return saved ? JSON.parse(saved) : [];
+  // });
+
+  // useEffect(() => {
+  //   localStorage.setItem("complaints", JSON.stringify(complaints));
+  // }, [complaints]);
+
+  // const addComplaint = (c) => setComplaints([c, ...complaints]);
+
+
   return(
     <div className="app.layout">
     <Navbar />
@@ -25,5 +38,12 @@ const App = () =>{
     <Footer />
     </div>
   )
-}
+};
 export default App;
+
+
+
+
+
+
+

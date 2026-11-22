@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
+
 const Navbar =() =>{
     const [open, setOpen] = useState(false); // dropdown khula hai (true) ya band (false)//
+    
     return(
    <nav className="navbar">
     <NavLink to="/" className="logo">Transport App</NavLink>
@@ -21,7 +23,10 @@ const Navbar =() =>{
         </div>
     )}
     </div>
-    <button className="theme-btn">Dark</button>
+   <button>dark</button>
+    {/* <button className="theme-btn" onClick={() => dispatch({ type: "TOGGLE" })}>
+  {theme === "light" ? "Dark" : "Light"}
+</button> */}
     </div>
    </nav>
     )
