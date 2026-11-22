@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const OTHER = "Other (write your own)";
+
 const problems = {
   Rickshaw: [
     "More than 3 passengers in the back",
@@ -28,15 +30,43 @@ const busDepots = {
 const Report = () => {
   const [type, setType] = useState("Rickshaw");
   const [problem, setProblem] = useState(problems.Rickshaw[0]);
+  const [custom, setCustom] = useState("");
   const [plate, setPlate] = useState("");
   const [area, setArea] = useState("Handewadi");
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const sentTo = type === "Rickshaw" ? rickshawStations[area] : busDepots[area];
-    setMessage("Report sent to " + sentTo);
+
+    const finalProblem = problem === OTHER ? custom.trim() : problem;
+    if (finalProblem === "") {
+      setMessage("Please write the problem.");
+      return;
+    }
+
+    const sentTo =
+      type === "Rickshaw" ? rickshawStations[area] : busDepots[area];
+
+    const saved = JSON.parse(localStorage.getItem("complaints")) || [];
+
+    saved.unshift({
+      id: Date.now(),
+      type: type,
+      problem: finalProblem,
+      plate: plate.trim().toUpperCase(),
+      area: area,
+      sentTo: sentTo,
+    });
+
+    localStorage.setItem("complaints", JSON.stringify(saved));
+
+    setMessage("Report sent to " + sentTo + ". The driver will be informed after 1 hour, so you can reach your destination safely.");
+
     setPlate("");
+    setCustom("");
+    setType("Rickshaw");
+    setProblem(problems.Rickshaw[0]);
+    setArea("Handewadi");
   };
 
   return (
@@ -61,7 +91,17 @@ const Report = () => {
           {problems[type].map((p) => (
             <option key={p}>{p}</option>
           ))}
+          <option>{OTHER}</option>
         </select>
+
+        {problem === OTHER && (
+          <input
+            type="text"
+            placeholder="Write your problem here"
+            value={custom}
+            onChange={(e) => setCustom(e.target.value)}
+          />
+        )}
 
         <label>Vehicle number</label>
         <input

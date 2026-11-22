@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { ThemeContext } from "./ThemeContext";
 
 
 const Navbar =() =>{
     const [open, setOpen] = useState(false); // dropdown khula hai (true) ya band (false)//
+    const {theme, dispatch} = useContext(ThemeContext);
     
     return(
    <nav className="navbar">
@@ -23,7 +25,9 @@ const Navbar =() =>{
         </div>
     )}
     </div>
-   <button>dark</button>
+    <button className="theme-btn" onClick={() => dispatch({ type: "THEME_TOGGLE" })}>
+       {theme === "dark" ? "light" : "dark"}
+    </button>
     {/* <button className="theme-btn" onClick={() => dispatch({ type: "TOGGLE" })}>
   {theme === "light" ? "Dark" : "Light"}
 </button> */}

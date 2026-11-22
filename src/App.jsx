@@ -9,6 +9,8 @@ import Footer from "./components/Footer";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import { useContext } from "react";
+import { ThemeContext } from "./components/ThemeContext";
 
 const App = () => {
   // const [complaints, setComplaints] = useState(() => {
@@ -22,9 +24,9 @@ const App = () => {
 
   // const addComplaint = (c) => setComplaints([c, ...complaints]);
 
-
+  const {theme} = useContext(ThemeContext);
   return(
-    <div className="app.layout">
+    <div className={"app.layout" + theme}>
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />}/>

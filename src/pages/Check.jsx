@@ -1,31 +1,23 @@
 import { useState } from "react";
 
-const Check = ({ complaints = [] }) => {
+const Check = () => {
   const [query, setQuery] = useState("");
 
+  const complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+
   const search = query.trim().toUpperCase();
+  const matches = complaints.filter((c) => c.plate === search);
 
-  const matches = complaints.filter(
-    (c) => c.plate?.toUpperCase() === search
-  );
-
+  // kaun si problem kitni baar
   const counts = {};
-
   matches.forEach((c) => {
     counts[c.problem] = (counts[c.problem] || 0) + 1;
   });
-
-  const topProblem = Object.keys(counts).sort(
-    (a, b) => counts[b] - counts[a]
-  )[0];
+  const topProblem = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];
 
   let level = "No complaints found";
-
-  if (matches.length >= 3) {
-    level = "High risk";
-  } else if (matches.length >= 1) {
-    level = "Caution";
-  }
+  if (matches.length >= 3) level = "High risk";
+  else if (matches.length >= 1) level = "Caution";
 
   return (
     <div className="check">
@@ -43,15 +35,13 @@ const Check = ({ complaints = [] }) => {
         <div className="check-result">
           <h2>{level}</h2>
           <p>Total complaints: {matches.length}</p>
-
-          {topProblem && (
-            <p>Most reported problem: {topProblem}</p>
-          )}
+          {matches.length >= 3 && (
+        <p>Authority has notified this driver. 24 hours to respond.</p>
+         )}
+          {topProblem && <p>Most reported problem: {topProblem}</p>}
 
           {matches.map((c) => (
-            <p key={c.id}>
-              • {c.problem} ({c.area})
-            </p>
+            <p key={c.id}>• {c.problem} ({c.area})</p>
           ))}
         </div>
       )}
