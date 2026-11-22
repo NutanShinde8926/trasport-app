@@ -157,6 +157,26 @@ main{
     padding: 10px 16px;
     border-radius: 10px;
 }
+.dropdown-btn{
+    background-color: none;
+    border: none;
+    font-size: 15px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.dropdown{
+    position: relative;/*This allows us to position the dropdown menu exactly where we want it relative to its positioned parent (.dropdown).*/
+}
+.dropdown-menu{
+    position: absolute; /*lets the menu float independently of the Navbar layout.*/
+    top: 100%; /*places the menu below the Account container.*/
+    right: 0;
+    background-color: #1b3a2b;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /*places Login and Signup vertically.*/
+    min-width: 140px;
+}
 
 /*ABOUT*/
 .about{
@@ -183,4 +203,25 @@ main{
     line-height: 1.8;
     color: #333;
     margin-top: 0;
+}
+
+/*AUTH*/
+.auth {
+    min-height: 75vh;
+    background-color: #f4f5ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.auth-form {
+    background-color: white;
+    width: 100%;
+    max-width: 380px;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
