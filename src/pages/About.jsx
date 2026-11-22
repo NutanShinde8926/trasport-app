@@ -19,6 +19,15 @@ const About = ()=>{
                 <h2>OUR GOAL</h2>
                 <p><b>This is app is not here to punish anyone.It is here to show authorities where rules
                     are weak, So    Passengers and Drivers both get fair System.</b></p>
+
+                  <h2>Suggestions for conductors</h2>
+                 <ul>
+                     <li>Ask passengers to use earphones. Loud reels or music disturb everyone.</li>
+                     <li>Do not allow anyone to throw wrappers or waste out of the window. Keep a dustbin or bag near the door.</li>
+                    <li>Request passengers not to eat inside the bus, to keep it clean for all.</li>
+                    <li>Stop at every bus stop when a passenger signals.</li>
+                    <li>Do not allow more passengers than the bus capacity.</li>
+                     </ul>  
             </div>
         </div>
 

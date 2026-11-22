@@ -1,4 +1,4 @@
-// import { useState, useEffect } from "react";
+ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Report from "./pages/Report";
@@ -25,8 +25,11 @@ const App = () => {
   // const addComplaint = (c) => setComplaints([c, ...complaints]);
 
   const {theme} = useContext(ThemeContext);
+  useEffect(() => {
+   document.body.className = theme;
+   }, [theme]);
   return(
-    <div className={"app.layout" + theme}>
+    <div className= "app layout">
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />}/>

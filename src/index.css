@@ -396,6 +396,11 @@ button {
     box-shadow: 0 12px 32px rgb(23 61 45 / 7%);
 }
 
+.about-card li {
+    line-height: 1.8;
+    color: #333;
+}
+
 .auth-form input {
     min-height: 46px;
 }
@@ -472,6 +477,88 @@ button {
         border-radius: 28px;
     }
 }
+
+/* FOR THREME CONTEXT*/
+/* .dark{
+    background-color: black;
+    color: white;
+}
+.light{
+    background-color: white;
+    color: black;
+} */
+
+/* .dark { background-color: black; color: white; }
+.light { background-color: white; color: black; }
+
+.dark .Home, .dark .about, .dark .auth,
+.dark .report, .dark .complaints, .dark .check {
+    background-color: black;
+    color: white;
+}
+
+.dark .about-card, .dark .auth-form, .dark .report-form,
+.dark .complaint-card, .dark .check-result {
+    background-color: #1b2e24;
+    color: white;
+} */
+
+/* .dark { background-color: black; color: white; }
+.light { background-color: white; color: black; } */
+/*DARK MODE*/
+body.dark {
+    background-color: #0f1f17;
+    color: #e8efe9;
+}
+
+body.dark .Home,
+body.dark .about,
+body.dark .auth,
+body.dark .report,
+body.dark .complaints,
+body.dark .check {
+    background-color: #0f1f17 !important;
+    color: #e8efe9 !important;
+}
+
+body.dark .about-card,
+body.dark .auth-form,
+body.dark .report-form,
+body.dark .complaint-card,
+body.dark .check-result {
+    background-color: #1b2e24 !important;
+    color: #e8efe9 !important;
+}
+
+body.dark .about-card h1,
+body.dark .about-card h2,
+body.dark .report-form h1,
+body.dark .complaints h1,
+body.dark .check h1,
+body.dark .complaint-card h3,
+body.dark .check-result h2 {
+    color: #e9ad32 !important;
+}
+
+body.dark .about-card p,
+body.dark .check p,
+body.dark label {
+    color: #dce7df !important;
+}
+
+body.dark input,
+body.dark select {
+    background-color: #12261c !important;
+    color: #e8efe9 !important;
+    border: 1px solid #3a5a47 !important;
+}
+
+body.dark .auth-form a {
+    color: #e9ad32 !important;
+}
+
+
+
 
 @media (max-width: 480px) {
     .Home,
